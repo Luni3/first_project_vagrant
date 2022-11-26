@@ -16,6 +16,8 @@ MACHINES = {
 }
 
 Vagrant.configure("2") do |config|
+  config.vm.box = "lunian/centos-7-5"
+  config.vm.box_version = "1.0"
   MACHINES.each do |boxname, boxconfig|
     # Disable shared folders
     config.vm.synced_folder ".", "/vagrant", disabled: true
